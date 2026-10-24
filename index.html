@@ -1,0 +1,430 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="description" content="2108 FITWEAR — женская спортивная одежда для тренировок, города и повседневной жизни.">
+  <meta name="theme-color" content="#f4f3ef">
+
+  <title>2108 FITWEAR — Women's Activewear</title>
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <!-- ANNOUNCEMENT -->
+  <div class="announcement">
+    <span>FREE DELIVERY FROM 30 000 ₸</span>
+    <span aria-hidden="true">•</span>
+    <span>2108 FITWEAR</span>
+  </div>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header-inner">
+      <button
+        class="icon-btn mobile-menu-btn"
+        id="mobileMenu"
+        type="button"
+        aria-label="Открыть меню"
+        aria-controls="nav"
+        aria-expanded="false"
+      >☰</button>
+
+      <a class="logo" href="#top" aria-label="2108 FITWEAR — главная">
+        <span class="logo-mark">2108</span>
+        <span class="logo-word">FITWEAR</span>
+      </a>
+
+      <nav class="nav" id="nav" aria-label="Основная навигация">
+        <a href="#catalog">КОЛЛЕКЦИЯ</a>
+        <a href="#about">О БРЕНДЕ</a>
+        <a href="#delivery">ДОСТАВКА</a>
+        <a href="#contacts">КОНТАКТЫ</a>
+      </nav>
+
+      <div class="header-actions">
+        <button
+          class="icon-btn"
+          id="searchBtn"
+          type="button"
+          aria-label="Поиск товаров"
+          aria-controls="searchbar"
+          aria-expanded="false"
+        >⌕</button>
+
+        <button
+          class="icon-btn"
+          id="cartBtn"
+          type="button"
+          aria-label="Открыть корзину"
+          aria-controls="cart"
+        >
+          ♡
+          <span class="cart-count" id="cart-count">0</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="searchbar" id="searchbar">
+      <input
+        id="searchInput"
+        type="search"
+        placeholder="Поиск по коллекции..."
+        aria-label="Поиск по товарам"
+        autocomplete="off"
+      >
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-image">
+        <div class="hero-placeholder" aria-hidden="true">
+          <span>2108</span>
+          <small>WOMEN'S ACTIVEWEAR</small>
+        </div>
+      </div>
+
+      <div class="hero-overlay" aria-hidden="true"></div>
+
+      <div class="hero-content">
+        <p class="eyebrow">WOMEN'S ACTIVEWEAR · 2108</p>
+
+        <h1 id="hero-title">
+          MOVE<br>
+          <em>WITH</em><br>
+          CONFIDENCE.
+        </h1>
+
+        <p class="hero-text">
+          Спортивная форма, в которой хочется двигаться,
+          жить и быть собой.
+        </p>
+
+        <a href="#catalog" class="btn btn-light">
+          СМОТРЕТЬ КОЛЛЕКЦИЮ
+          <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+
+      <div class="hero-scroll" aria-hidden="true">
+        SCROLL TO EXPLORE ↓
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="intro" id="about" aria-labelledby="about-title">
+      <div class="section-number">01 / 04</div>
+
+      <div>
+        <p class="eyebrow dark">2108 FITWEAR</p>
+
+        <h2 id="about-title">
+          Форма, которая<br>
+          <em>движется вместе с тобой.</em>
+        </h2>
+      </div>
+
+      <p class="intro-copy">
+        Мы создаём женскую спортивную одежду для тренировок,
+        города и тех дней, когда комфорт — это часть твоего стиля.
+      </p>
+    </section>
+
+    <!-- CATALOG -->
+    <section
+      class="catalog-section"
+      id="catalog"
+      aria-labelledby="catalog-title"
+    >
+      <div class="section-head">
+        <div>
+          <p class="eyebrow dark">02 / COLLECTION</p>
+          <h2 id="catalog-title">THE 2108 EDIT</h2>
+        </div>
+
+        <div class="filters" aria-label="Фильтры товаров">
+          <button class="filter active" type="button" data-filter="all" aria-pressed="true">
+            ALL
+          </button>
+          <button class="filter" type="button" data-filter="tops" aria-pressed="false">
+            TOPS
+          </button>
+          <button class="filter" type="button" data-filter="bottoms" aria-pressed="false">
+            BOTTOMS
+          </button>
+          <button class="filter" type="button" data-filter="sets" aria-pressed="false">
+            SETS
+          </button>
+          <button class="filter" type="button" data-filter="outerwear" aria-pressed="false">
+            OUTERWEAR
+          </button>
+        </div>
+      </div>
+
+      <!-- Карточки товаров создаёт script.js из данных Supabase -->
+      <div
+        class="products products-grid"
+        id="products"
+        aria-live="polite"
+        aria-busy="true"
+      >
+        <div class="loading">ЗАГРУЖАЕМ КОЛЛЕКЦИЮ…</div>
+      </div>
+    </section>
+
+    <!-- BRAND STATEMENT -->
+    <section class="statement" aria-labelledby="statement-title">
+      <div class="statement-image">
+        <div class="statement-placeholder" aria-hidden="true">
+          <span>2108</span>
+          <small>DESIGNED FOR HER</small>
+        </div>
+      </div>
+
+      <div class="statement-copy">
+        <p class="eyebrow">DESIGNED FOR HER</p>
+
+        <h2 id="statement-title">
+          NOT JUST<br>
+          <em>WORKOUT WEAR.</em>
+        </h2>
+
+        <p>
+          Минималистичный крой, выразительные детали
+          и вещи, которые легко становятся частью
+          твоего ежедневного гардероба.
+        </p>
+
+        <a href="#catalog" class="text-link">
+          EXPLORE PRODUCTS ↗
+        </a>
+      </div>
+    </section>
+
+    <!-- DELIVERY -->
+    <section class="delivery" id="delivery" aria-label="Как оформить заказ">
+      <div class="section-number">03 / 04</div>
+
+      <div class="delivery-grid">
+        <article>
+          <span>01</span>
+          <h3>ЗАКАЗ</h3>
+          <p>
+            Выбирай вещи на сайте и отправляй заявку через WhatsApp.
+            Менеджер подтвердит наличие и детали заказа.
+          </p>
+        </article>
+
+        <article>
+          <span>02</span>
+          <h3>ОПЛАТА</h3>
+          <p>
+            Менеджер отправит актуальные данные для оплаты
+            и поможет подобрать размер.
+          </p>
+        </article>
+
+        <article>
+          <span>03</span>
+          <h3>ДОСТАВКА</h3>
+          <p>
+            Условия и стоимость доставки уточняются
+            при оформлении заказа в зависимости от города.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- SOCIAL -->
+    <section class="instagram" aria-labelledby="instagram-title">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow dark">04 / FOLLOW US</p>
+          <h2 id="instagram-title">@2108_FITWEAR</h2>
+        </div>
+
+        <a
+          class="text-link"
+          href="https://instagram.com/2108_fitwear"
+          target="_blank"
+          rel="noopener noreferrer"
+        >INSTAGRAM ↗</a>
+      </div>
+
+      <div class="social-note">
+        <span class="social-note-mark">2108</span>
+        <p>FOLLOW OUR JOURNEY</p>
+
+        <a
+          href="https://instagram.com/2108_fitwear"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-link"
+        >DISCOVER OUR INSTAGRAM ↗</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer" id="contacts">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a class="logo large" href="#top" aria-label="2108 FITWEAR — наверх">
+          <span class="logo-mark">2108</span>
+          <span class="logo-word">FITWEAR</span>
+        </a>
+
+        <p>
+          WOMEN'S ACTIVEWEAR<br>
+          MADE FOR MOVEMENT.
+        </p>
+      </div>
+
+      <div class="footer-links">
+        <div>
+          <small>SHOP</small>
+          <a href="#catalog">Collection</a>
+          <a href="#catalog">New arrivals</a>
+        </div>
+
+        <div>
+          <small>INFO</small>
+          <a href="#about">About us</a>
+          <a href="#delivery">Delivery</a>
+        </div>
+
+        <div>
+          <small>SOCIAL</small>
+          <a
+            href="https://instagram.com/2108_fitwear"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Instagram</a>
+
+          <a
+            id="footerWhatsapp"
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+          >WhatsApp</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 2108 FITWEAR</span>
+      <span>ALMATY · KAZAKHSTAN</span>
+      <span>DESIGNED FOR MOVEMENT</span>
+    </div>
+  </footer>
+
+  <!-- PRODUCT MODAL -->
+  <div
+    class="modal"
+    id="productModal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="modalName"
+    aria-hidden="true"
+  >
+    <div class="modal-backdrop"></div>
+
+    <div class="modal-card">
+      <button
+        class="modal-close"
+        id="modalClose"
+        type="button"
+        aria-label="Закрыть окно"
+      >×</button>
+
+      <div class="modal-image">
+        <div class="modal-placeholder" aria-hidden="true">
+          <span>2108</span>
+        </div>
+
+        <img id="modalImg" src="" alt="" hidden>
+      </div>
+
+      <div class="modal-info">
+        <p class="eyebrow dark" id="modalCategory"></p>
+        <h2 id="modalName"></h2>
+        <p class="modal-price" id="modalPrice"></p>
+        <p id="modalDescription" class="modal-description"></p>
+
+        <div class="sizes">
+          <span>SIZE</span>
+          <div id="modalSizes"></div>
+        </div>
+
+        <button class="btn btn-dark full" id="modalAdd" type="button">
+          ДОБАВИТЬ В КОРЗИНУ
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- CART -->
+  <aside
+    class="cart"
+    id="cart"
+    aria-label="Корзина"
+    aria-modal="true"
+  >
+    <div class="cart-head">
+      <div>
+        <p class="eyebrow dark">YOUR BAG</p>
+        <h2>КОРЗИНА</h2>
+      </div>
+
+      <button
+        class="modal-close"
+        id="cartClose"
+        type="button"
+        aria-label="Закрыть корзину"
+      >×</button>
+    </div>
+
+    <div class="cart-items" id="cartItems">
+      <div class="empty-cart">
+        Корзина пока пуста.<br>
+        Выбери что-нибудь из коллекции.
+      </div>
+    </div>
+
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>ИТОГО</span>
+        <strong id="cartTotal">0 ₸</strong>
+      </div>
+
+      <a
+        class="btn btn-dark full"
+        id="whatsappOrder"
+        href="#"
+        target="_blank"
+        rel="noopener noreferrer"
+      >ЗАКАЗАТЬ В WHATSAPP ↗</a>
+
+      <a
+        class="btn btn-outline full"
+        href="https://instagram.com/2108_fitwear"
+        target="_blank"
+        rel="noopener noreferrer"
+      >НАПИСАТЬ В INSTAGRAM ↗</a>
+    </div>
+  </aside>
+
+  <div class="cart-overlay" id="cartOverlay"></div>
+
+  <!-- SCRIPTS: keep Supabase and storefront logic -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="./supabase-config.js"></script>
+  <script src="./script.js"></script>
+</body>
+</html>
